@@ -63,6 +63,7 @@ namespace EurekaHelper;
         private void ToggleConfig(string command, string argument) => DrawConfigUI();
 
         [Command("/arisu")]
+        [Aliases("/miniarisu", "/mercy")]
         [HelpMessage("Display next weather for Crab, Cassie & Skoll.")]
         private void Arisu(string command, string argument)
         {
