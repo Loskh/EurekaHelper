@@ -1064,7 +1064,7 @@ namespace EurekaHelper.Windows
             ImGui.Indent();
             var userUrl = "https://github.com/KangasZ";
             ImGui.Text("GitHub:"); ImGui.SameLine(); Utils.TextURL("GitHub", $"{userUrl}/EurekaHelper", ImGui.GetColorU32(ImGuiCol.Text));
-            ImGui.Text("Last commit:"); ImGui.SameLine(); ImGui.Text(Utils.GetGitSha());
+            //ImGui.Text("Last commit:"); ImGui.SameLine(); ImGui.Text(Utils.GetGitSha());
             ImGui.Text("Version:"); ImGui.SameLine(); ImGui.Text(Utils.GetVersion());
             ImGui.Unindent();
             ImGui.Dummy(new Vector2(0.0f, 10.0f));
