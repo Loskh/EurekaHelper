@@ -2,14 +2,14 @@
 using Dalamud.Game.ClientState.Objects.Types;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Game.Text.SeStringHandling.Payloads;
-using EurekaHelper.Windows;
-using EurekaHelper.XIV;
-using EurekaHelper.XIV.Zones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Plugin.Services;
+using EurekaHelper.Windows;
+using EurekaHelper.XIV;
+using EurekaHelper.XIV.Zones;
 
 namespace EurekaHelper.System
 {

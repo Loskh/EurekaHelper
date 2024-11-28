@@ -1,9 +1,9 @@
 ﻿using Dalamud.Configuration;
 using Dalamud.Game.Text;
-using EurekaHelper.System;
-using EurekaHelper.XIV;
 using System;
 using System.Collections.Generic;
+using EurekaHelper.System;
+using EurekaHelper.XIV;
 
 namespace EurekaHelper
 {

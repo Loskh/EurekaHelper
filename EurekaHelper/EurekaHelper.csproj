@@ -1,17 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<Authors>Snowy</Authors>
+		<Authors>Snowy and KangasZ</Authors>
 		<Version>1.6.0.0</Version>
-		<Description>A plugin to enchance your Eureka experience</Description>
-		<PackageProjectUrl>https://github.com/snorux</PackageProjectUrl>
+		<Description>A plugin to enchance your Eureka experience, updated for the most current patch</Description>
+		<PackageProjectUrl>https://github.com/KangasZ/EurekaHelper</PackageProjectUrl>
 	</PropertyGroup>
 	
     <PropertyGroup>
         <TargetFramework>net8.0-windows</TargetFramework>
 		<Platforms>x64</Platforms>
-		<NoWarn>CA1416</NoWarn>
 		<RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     </PropertyGroup>
 
 	<PropertyGroup>

@@ -1,19 +1,16 @@
 ﻿using Dalamud.Game.Text;
 using Dalamud.Game.Text.SeStringHandling;
 using Dalamud.Interface.Windowing;
-using Dalamud.Logging;
 using Dalamud.Plugin;
+using Newtonsoft.Json.Linq;
+using System.Linq;
+using System.Threading;
 using EurekaHelper.System;
 using EurekaHelper.Windows;
 using EurekaHelper.XIV;
 using EurekaHelper.XIV.Zones;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Linq;
-using System.Threading;
 
-namespace EurekaHelper
-{
+namespace EurekaHelper;
     public class EurekaHelper : IDalamudPlugin
     {
         public string Name => "Eureka Helper";
@@ -187,4 +184,3 @@ namespace EurekaHelper
             DalamudApi.PluginInterface.RemoveChatLinkHandler();
         }
     }
-}

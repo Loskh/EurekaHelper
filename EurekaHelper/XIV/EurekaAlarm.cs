@@ -1,6 +1,6 @@
 ﻿using Dalamud.Game.Text.SeStringHandling;
-using EurekaHelper.System;
 using System;
+using EurekaHelper.System;
 
 namespace EurekaHelper.XIV
 {

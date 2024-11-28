@@ -3,9 +3,7 @@ using System;
 using ImGuiNET;
 using System.Numerics;
 using Dalamud.Interface;
-using EurekaHelper.System;
 using System.Threading.Tasks;
-using EurekaHelper.XIV;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +11,8 @@ using Dalamud.Logging;
 using Dalamud.Interface.Components;
 using Dalamud.Game.Text;
 using Dalamud.Interface.Colors;
+using EurekaHelper.System;
+using EurekaHelper.XIV;
 
 namespace EurekaHelper.Windows
 {
@@ -1062,7 +1062,8 @@ namespace EurekaHelper.Windows
 
             ImGui.TextColored(new Vector4(0.0f, 1.0f, 1.0f, 1.0f), "Information:");
             ImGui.Indent();
-            ImGui.Text("GitHub:"); ImGui.SameLine(); Utils.TextURL("GitHub", "https://github.com/snorux/EurekaHelper", ImGui.GetColorU32(ImGuiCol.Text));
+            var userUrl = "https://github.com/KangasZ";
+            ImGui.Text("GitHub:"); ImGui.SameLine(); Utils.TextURL("GitHub", $"{userUrl}/EurekaHelper", ImGui.GetColorU32(ImGuiCol.Text));
             ImGui.Text("Last commit:"); ImGui.SameLine(); ImGui.Text(Utils.GetGitSha());
             ImGui.Text("Version:"); ImGui.SameLine(); ImGui.Text(Utils.GetVersion());
             ImGui.Unindent();
@@ -1070,8 +1071,8 @@ namespace EurekaHelper.Windows
 
             ImGui.TextColored(new Vector4(1.0f, 0.7f, 0.06f, 1.0f), "Contact:");
             ImGui.Indent();
-            ImGui.Text("Discord:"); ImGui.SameLine(); ImGui.Text("@snorux");
-            ImGui.Text("Issues / Feedbacks:"); ImGui.SameLine(); Utils.TextURL("GitHub", "https://github.com/snorux/EurekaHelper/issues", ImGui.GetColorU32(ImGuiCol.Text));
+            //ImGui.Text("Discord:"); ImGui.SameLine(); ImGui.Text("@snorux");
+            ImGui.Text("Issues / Feedbacks:"); ImGui.SameLine(); Utils.TextURL("GitHub", $"{userUrl}/EurekaHelper/issues", ImGui.GetColorU32(ImGuiCol.Text));
             ImGui.Unindent();
             ImGui.Dummy(new Vector2(0.0f, 10.0f));
 

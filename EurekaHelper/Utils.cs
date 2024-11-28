@@ -5,8 +5,6 @@ using System.Globalization;
 using ImGuiNET;
 using System;
 using System.Linq;
-using EurekaHelper.XIV;
-using EurekaHelper.XIV.Zones;
 using Dalamud.Interface;
 using System.Diagnostics;
 using System.Reflection;
@@ -16,6 +14,8 @@ using System.Collections.Generic;
 using Lumina.Data.Parsing.Layer;
 using Lumina.Data.Files;
 using Dalamud.Utility;
+using EurekaHelper.XIV;
+using EurekaHelper.XIV.Zones;
 using Lumina.Excel.Sheets;
 
 namespace EurekaHelper

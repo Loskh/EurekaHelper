@@ -3,14 +3,14 @@ using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Windowing;
 using Dalamud.Logging;
-using EurekaHelper.XIV;
-using EurekaHelper.XIV.Relic;
 using FFXIVClientStructs.FFXIV.Client.Game;
 using ImGuiNET;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using EurekaHelper.XIV;
+using EurekaHelper.XIV.Relic;
 
 namespace EurekaHelper.Windows
 {

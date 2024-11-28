@@ -1,13 +1,13 @@
 ﻿using Dalamud.Game;
 using Dalamud.Game.ClientState.Conditions;
-using EurekaHelper.XIV;
-using EurekaHelper.XIV.Zones;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Dalamud.Plugin.Services;
+using EurekaHelper.XIV;
+using EurekaHelper.XIV.Zones;
 
 namespace EurekaHelper.System
 {

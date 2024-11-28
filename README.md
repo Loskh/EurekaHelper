@@ -1,3 +1,7 @@
+This is a redistribution of the existing Eureka Helper Plugin. This is the same plugin, however maintained by me instead of Snowy.
+
+In the short term I will be maintaining the plugin with feature work being secondary to maintenance. This may change at any time, however once Snowy returns I intend to return all maintainer status to them.
+
 <section id="header" align="center">
   <h1>
     <img href="https://https://github.com/snorux/EurekaHelper" src="/EurekaHelper/Resources/icon.png" width="150px" />
@@ -36,7 +40,6 @@
 </details>
 
 <hr>
-
 ## Description
 EurekaHelper is a plugin for [XIVLauncher](https://goatcorp.github.io/). It's a handy plugin that enhances your Eureka gameplay with an In-Game Eureka Tracker and convenient quality-of-life features.
 
