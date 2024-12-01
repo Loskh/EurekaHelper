@@ -4,7 +4,9 @@ using Dalamud.Interface.Windowing;
 using Dalamud.Plugin;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.Numerics;
 using System.Threading;
+using Dalamud.Game.Text.SeStringHandling.Payloads;
 using EurekaHelper.System;
 using EurekaHelper.Windows;
 using EurekaHelper.XIV;
@@ -56,6 +58,43 @@ namespace EurekaHelper;
             DalamudApi.PluginInterface.UiBuilder.Draw += DrawUI;
             DalamudApi.PluginInterface.UiBuilder.OpenConfigUi += DrawConfigUI;
         }
+
+#if DEBUG
+        [Command("/testshout")]
+        private void TestShout(string command, string argument)
+        {
+            var fate = new EurekaFate(1425, null, 827, 515, "Drink Me", "Bunny Fate 1", "Bunny Fate 1",
+                new Vector2(14.0f, 21.5f), null, Vector2.Zero, EurekaWeather.None, EurekaWeather.None,
+                EurekaElement.Unknown, EurekaElement.Unknown, false, 50, false, true);
+            
+            DalamudApi.PluginInterface.RemoveChatLinkHandler(fate.FateId);
+
+            var sb = new SeStringBuilder()
+                .AddText($"Test: ")
+                .Append(Utils.MapLink(fate.TerritoryId, fate.MapId, fate.FatePosition));
+            DalamudLinkPayload payload = DalamudApi.PluginInterface.AddChatLinkHandler(fate.FateId, (i, m) =>
+            {
+                Utils.SetFlagMarker(fate, randomizeCoords: EurekaHelper.Config.RandomizeMapCoords);
+                
+                Utils.SendMessage(Utils.RandomFormattedText(fate));
+            });
+
+            var text = EurekaHelper.Config.PayloadOptions switch
+            {
+                PayloadOptions.ShoutToChat => "shout",
+                PayloadOptions.CopyToClipboard => "copy",
+                _ => "shout"
+            };
+
+            sb.AddText(" ");
+            sb.AddUiForeground(32);
+            sb.Add(payload);
+            sb.AddText($"[Click to {text}]");
+            sb.Add(RawPayload.LinkTerminator);
+            sb.AddUiForegroundOff();
+            EurekaHelper.PrintMessage(sb.BuiltString);
+        }
+#endif
 
         [Command("/eurekahelper")]
         [Aliases("/ehelper", "/eh")]
