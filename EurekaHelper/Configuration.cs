@@ -17,15 +17,24 @@ namespace EurekaHelper
     [Serializable]
     public class Configuration : IPluginConfiguration
     {
-        public int Version { get; set; } = 0;
+        public int Version { get; set; } = 1;
 
         public void Initialize() 
         {
             if (CustomMessages.Count == 0)
             {
                 CustomMessages.Add("/shout %bossName% POP. %flag%");
-                Save();
             }
+
+            if (Version < 1)
+            {
+                // Dated 12/30/2024
+                Version = 1;
+                NMChatSoundEffect = SoundEffects.MapOldToNew(NMSoundEffect);
+                BunnyChatSoundEffect = SoundEffects.MapOldToNew(BunnySoundEffect);
+            }
+            
+            Save();
         }
 
         /*
@@ -58,9 +67,11 @@ namespace EurekaHelper
 
         public List<string> CustomMessages { get; set; } = new();
 
-        public SoundEffect NMSoundEffect { get; set; } = SoundEffect.SoundEffect36;
+        public OldSoundEffect NMSoundEffect { get; set; } = OldSoundEffect.SoundEffect36;
 
-        public SoundEffect BunnySoundEffect { get; set; } = SoundEffect.SoundEffect41;
+        public OldSoundEffect BunnySoundEffect { get; set; } = OldSoundEffect.SoundEffect41;
+        public ChatSoundEffect NMChatSoundEffect { get; set; } = ChatSoundEffect.SoundEffect1;
+        public ChatSoundEffect BunnyChatSoundEffect { get; set; } = ChatSoundEffect.SoundEffect6;
 
         public PayloadOptions PayloadOptions { get; set; } = PayloadOptions.ShoutToChat;
 

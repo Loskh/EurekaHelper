@@ -921,27 +921,27 @@ namespace EurekaHelper.Windows
             ImGui.NextColumn();
 
             ImGui.SetNextItemWidth(140f);
-            var enumNames = Enum.GetNames<SoundEffect>();
-            var enumValues = Enum.GetValues<SoundEffect>();
-            var enumCurrent = Array.IndexOf(enumValues, EurekaHelper.Config.NMSoundEffect);
+            var enumNames = Enum.GetNames<ChatSoundEffect>();
+            var enumValues = Enum.GetValues<ChatSoundEffect>();
+            var enumCurrent = Array.IndexOf(enumValues, EurekaHelper.Config.NMChatSoundEffect);
             if (ImGui.Combo("NM Sound Effect", ref enumCurrent, enumNames, enumNames.Length))
             {
-                EurekaHelper.Config.NMSoundEffect = enumValues[enumCurrent];
+                EurekaHelper.Config.NMChatSoundEffect = enumValues[enumCurrent];
                 SoundManager.PlaySoundEffect(enumValues[enumCurrent]);
                 save = true;
             }
-            Utils.SetTooltip("Sound Effect to be played when an NM pops. Add 36 to the macro sound you want. Example: <se.5> is 5 + 36 = 41");
+            Utils.SetTooltip("Chat Sound Effect to be played when an NM pops.");
             ImGui.NextColumn();
 
             ImGui.SetNextItemWidth(140f);
-            enumCurrent = Array.IndexOf(enumValues, EurekaHelper.Config.BunnySoundEffect);
+            enumCurrent = Array.IndexOf(enumValues, EurekaHelper.Config.BunnyChatSoundEffect);
             if (ImGui.Combo("Bunny Sound Effect", ref enumCurrent, enumNames, enumNames.Length))
             {
-                EurekaHelper.Config.BunnySoundEffect = enumValues[enumCurrent];
+                EurekaHelper.Config.BunnyChatSoundEffect= enumValues[enumCurrent];
                 SoundManager.PlaySoundEffect(enumValues[enumCurrent]);
                 save = true;
             }
-            Utils.SetTooltip("Sound Effect to be played when bunny spawns. Add 36 to the macro sound you want. Example: <se.5> is 5 + 36 = 41");
+            Utils.SetTooltip("Chat Sound Effect to be played when bunny spawns.");
             ImGui.NextColumn();
 
             ImGui.SetNextItemWidth(140f);
