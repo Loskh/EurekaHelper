@@ -20,7 +20,8 @@ namespace EurekaHelper.XIV
     {
         public string ID { get; set; }
         public string Name { get; set; }
-        public ChatSoundEffect SoundEffect { get; set; }
+        public OldSoundEffect SoundEffect { get; set; }
+        public ChatSoundEffect ChatSoundEffect { get; set; }
         public AlarmType Type { get; set; }
         public TimeType TimeType { get; set; }
         public EurekaWeather Weather { get; set; }
@@ -108,6 +109,7 @@ namespace EurekaHelper.XIV
                 ID = ID,
                 Name = Name,
                 SoundEffect = SoundEffect,
+                ChatSoundEffect = ChatSoundEffect,
                 Type = Type,
                 TimeType = TimeType,
                 Weather = Weather,

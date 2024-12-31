@@ -17,7 +17,7 @@ namespace EurekaHelper
     [Serializable]
     public class Configuration : IPluginConfiguration
     {
-        public int Version { get; set; } = 1;
+        public int Version { get; set; } = 2;
 
         public void Initialize() 
         {
@@ -26,12 +26,13 @@ namespace EurekaHelper
                 CustomMessages.Add("/shout %bossName% POP. %flag%");
             }
 
-            if (Version < 1)
+            if (Version < 2)
             {
                 // Dated 12/30/2024
-                Version = 1;
+                Version = 2;
                 NMChatSoundEffect = SoundEffects.MapOldToNew(NMSoundEffect);
                 BunnyChatSoundEffect = SoundEffects.MapOldToNew(BunnySoundEffect);
+                Alarms.ForEach(x => x.ChatSoundEffect = SoundEffects.MapOldToNew(x.SoundEffect));
             }
             
             Save();

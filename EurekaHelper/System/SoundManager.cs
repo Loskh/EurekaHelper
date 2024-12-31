@@ -8,10 +8,13 @@ namespace EurekaHelper.System
     {
         public static void PlaySoundEffect(ChatSoundEffect soundEffect)
         {
-            unsafe
+            var soundEffectId = (uint)soundEffect;
+            if (soundEffectId is < 1 or > 16)
             {
-                UIGlobals.PlayChatSoundEffect((uint)soundEffect);
+                soundEffect = ChatSoundEffect.SoundEffect1;
             }
+
+            UIGlobals.PlayChatSoundEffect((uint)soundEffect);
         }
     }
 }

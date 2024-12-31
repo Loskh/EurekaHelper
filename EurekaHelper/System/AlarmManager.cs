@@ -49,7 +49,7 @@ namespace EurekaHelper.System
 
             var uptime = GetUptime(alarm);
             alarm.Announce(uptime);
-            SoundManager.PlaySoundEffect(alarm.SoundEffect);
+            SoundManager.PlaySoundEffect(alarm.ChatSoundEffect);
 
             var newUptime = uptime;
             var newStart = DateTime.MinValue;
