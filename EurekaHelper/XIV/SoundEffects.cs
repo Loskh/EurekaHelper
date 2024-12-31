@@ -45,28 +45,6 @@ public enum ChatSoundEffect
 
 public class SoundEffects
 {
-
-    public static Dictionary<OldSoundEffect, ChatSoundEffect> oldToNewMapping = new()
-    {
-        { OldSoundEffect.SoundEffect36, ChatSoundEffect.SoundEffect1 },
-        { OldSoundEffect.SoundEffect37, ChatSoundEffect.SoundEffect2 },
-        { OldSoundEffect.SoundEffect38, ChatSoundEffect.SoundEffect3 },
-        { OldSoundEffect.SoundEffect39, ChatSoundEffect.SoundEffect4 },
-        { OldSoundEffect.SoundEffect40, ChatSoundEffect.SoundEffect5 },
-        { OldSoundEffect.SoundEffect41, ChatSoundEffect.SoundEffect6 },
-        { OldSoundEffect.SoundEffect42, ChatSoundEffect.SoundEffect7 },
-        { OldSoundEffect.SoundEffect43, ChatSoundEffect.SoundEffect8 },
-        { OldSoundEffect.SoundEffect44, ChatSoundEffect.SoundEffect9 },
-        { OldSoundEffect.SoundEffect45, ChatSoundEffect.SoundEffect10 },
-        { OldSoundEffect.SoundEffect46, ChatSoundEffect.SoundEffect11 },
-        { OldSoundEffect.SoundEffect47, ChatSoundEffect.SoundEffect12 },
-        { OldSoundEffect.SoundEffect48, ChatSoundEffect.SoundEffect13 },
-        { OldSoundEffect.SoundEffect49, ChatSoundEffect.SoundEffect14 },
-        { OldSoundEffect.SoundEffect50, ChatSoundEffect.SoundEffect15 },
-        { OldSoundEffect.SoundEffect51, ChatSoundEffect.SoundEffect16 },
-        { OldSoundEffect.SoundEffect52, ChatSoundEffect.SoundEffect1 }
-    };
-
     public static ChatSoundEffect MapOldToNew(OldSoundEffect oldSoundEffect)
     {
         switch (oldSoundEffect)
