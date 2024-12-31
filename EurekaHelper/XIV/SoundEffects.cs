@@ -69,6 +69,50 @@ public class SoundEffects
 
     public static ChatSoundEffect MapOldToNew(OldSoundEffect oldSoundEffect)
     {
-        return oldToNewMapping.TryGetValue(oldSoundEffect, out var newSoundEffect) ? newSoundEffect : throw new KeyNotFoundException($"No mapping found for {oldSoundEffect}");
+        switch (oldSoundEffect)
+        {
+            case OldSoundEffect.SoundEffect36:
+                return ChatSoundEffect.SoundEffect1;
+            case OldSoundEffect.SoundEffect37:
+                return ChatSoundEffect.SoundEffect2;
+            case OldSoundEffect.SoundEffect38:
+                return ChatSoundEffect.SoundEffect3;
+            case OldSoundEffect.SoundEffect39:
+                return ChatSoundEffect.SoundEffect4;
+            case OldSoundEffect.SoundEffect40:
+                return ChatSoundEffect.SoundEffect5;
+            case OldSoundEffect.SoundEffect41:
+                return ChatSoundEffect.SoundEffect6;
+            case OldSoundEffect.SoundEffect42:
+                return ChatSoundEffect.SoundEffect7;
+            case OldSoundEffect.SoundEffect43:
+                return ChatSoundEffect.SoundEffect8;
+            case OldSoundEffect.SoundEffect44:
+                return ChatSoundEffect.SoundEffect9;
+            case OldSoundEffect.SoundEffect45:
+                return ChatSoundEffect.SoundEffect10;
+            case OldSoundEffect.SoundEffect46:
+                return ChatSoundEffect.SoundEffect11;
+            case OldSoundEffect.SoundEffect47:
+                return ChatSoundEffect.SoundEffect12;
+            case OldSoundEffect.SoundEffect48:
+                return ChatSoundEffect.SoundEffect13;
+            case OldSoundEffect.SoundEffect49:
+                return ChatSoundEffect.SoundEffect14;
+            case OldSoundEffect.SoundEffect50:
+                return ChatSoundEffect.SoundEffect15;
+            case OldSoundEffect.SoundEffect51:
+                return ChatSoundEffect.SoundEffect16;
+            case OldSoundEffect.SoundEffect52:
+                return ChatSoundEffect.SoundEffect1;
+            default:
+                var soundEffectId = (uint)oldSoundEffect;
+                if (soundEffectId is < 1 or > 16)
+                {
+                    return ChatSoundEffect.SoundEffect1;
+                }
+
+                return (ChatSoundEffect)soundEffectId;
+        }
     }
 }

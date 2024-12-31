@@ -11,6 +11,7 @@ namespace EurekaHelper.System
             var soundEffectId = (uint)soundEffect;
             if (soundEffectId is < 1 or > 16)
             {
+                DalamudApi.Log.Error($"Invalid sound effect ID send to SoundManager, report this to the plugin creator: {soundEffectId}");
                 soundEffect = ChatSoundEffect.SoundEffect1;
             }
 
