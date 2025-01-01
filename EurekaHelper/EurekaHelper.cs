@@ -108,6 +108,8 @@ namespace EurekaHelper;
                 Config.GlobalUseChatSoundEffect = useGlobalChat;
                 Config.PayloadOptions = payload;
             }, delay * delayTicks++);
+            
+            // TODO: add some additional test cases to generate alarms
         }
 #endif
 
