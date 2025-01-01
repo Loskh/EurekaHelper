@@ -86,7 +86,7 @@ namespace EurekaHelper.System
             lastFates = DalamudApi.FateTable.ToList();
         }
 
-        private static void DisplayFatePop(EurekaFate fate)
+        public static void DisplayFatePop(EurekaFate fate)
         {
             var sb = new SeStringBuilder()
                 .AddText($"{fate.BossName}: ")
@@ -98,7 +98,7 @@ namespace EurekaHelper.System
                     DalamudApi.ToastGui.ShowQuest(sb.BuiltString);
 
                 if (EurekaHelper.Config.PlayPopSound)
-                    SoundManager.PlaySoundEffect(EurekaHelper.Config.NMChatSoundEffect);
+                    SoundManager.PlayNMSoundEffect();
 
                 if (EurekaHelper.Config.DisplayFatePop)
                 {
@@ -164,7 +164,7 @@ namespace EurekaHelper.System
                 if (EurekaHelper.Config.DisplayBunnyFates)
                 {
                     EurekaHelper.PrintMessage(sb.BuiltString);
-                    SoundManager.PlaySoundEffect(EurekaHelper.Config.BunnyChatSoundEffect);
+                    SoundManager.PlayBunnySoundEffect();
                 }
             }
         }
